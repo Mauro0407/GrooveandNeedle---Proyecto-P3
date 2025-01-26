@@ -11,7 +11,14 @@
         <ListView ItemsSource="{Binding Albums}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding Titulo}" Detail="{Binding Genero}" />
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding Titulo}" VerticalOptions="Center" />
+                            <Label Text="{Binding Genero}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
+                            <Button Text="Editar" Clicked="OnEditClicked" CommandParameter="{Binding Id}" />
+                            <Button Text="Eliminar" Clicked="OnDeleteClicked" CommandParameter="{Binding Id}" />
+                        </StackLayout>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
