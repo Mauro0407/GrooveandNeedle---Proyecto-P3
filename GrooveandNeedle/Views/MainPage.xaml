@@ -3,9 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="GrooveandNeedle.MainPage">
 
-    <StackLayout>
+    <StackLayout Padding="10">
+
         <Label Text="Álbumes Musicales" FontSize="32" HorizontalOptions="Center" />
 
+        <!-- Listado de álbumes -->
         <ListView ItemsSource="{Binding Albums}">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -15,5 +17,15 @@
         </ListView>
 
         <Button Text="Cargar Álbumes" Command="{Binding LoadAlbumsCommand}" />
+
+        <Label Text="Agregar Nuevo Álbum" FontSize="24" HorizontalOptions="Center" Margin="10" />
+
+        <!-- Formulario para nuevo álbum -->
+        <Entry x:Name="TituloEntry" Placeholder="Título" />
+        <Entry x:Name="GeneroEntry" Placeholder="Género" />
+        <DatePicker x:Name="FechaLanzamientoPicker" />
+
+        <Button Text="Agregar Álbum" Clicked="OnAddAlbumClicked" />
+
     </StackLayout>
 </ContentPage>
