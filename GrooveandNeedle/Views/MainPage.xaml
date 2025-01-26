@@ -4,7 +4,7 @@
              x:Class="GrooveandNeedle.MainPage">
 
     <StackLayout>
-        <Label Text="Álbumes Musicales :)" FontSize="32" HorizontalOptions="Center" />
+        <Label Text="Álbumes Musicales" FontSize="32" HorizontalOptions="Center" />
 
         <ListView ItemsSource="{Binding Albums}">
             <ListView.ItemTemplate>
